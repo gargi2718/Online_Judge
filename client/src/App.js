@@ -8,6 +8,7 @@ import Layout from './Layout.js';
 import axios from 'axios'
 
 axios.defaults.baseURL = 'http://localhost:4000';
+
 function App() {
   return (    
   <Routes>
@@ -28,7 +29,22 @@ function App() {
 
 export default App;
 
+
 /*
+  /*
+  const [email,setEmail]=useState('');
+  const [password,setPassword]=useState('');
+  async function handleLoginSubmit(ev) {
+    ev.preventDefault();
+    try{
+    await axios.post('/login',{email,password});
+        alert('Login Successful');
+    }
+    catch(e){
+        alert('Login Failed');
+    }
+  }*/
+  /*
  
 <main>
         <div className="entry">
