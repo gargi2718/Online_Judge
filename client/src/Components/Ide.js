@@ -3,6 +3,8 @@ import Nav from './Nav'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import stubs from "./stubs";
+import { BACKEND_URL} from "../../Url.js"
+
 import Editor from '@monaco-editor/react';
 export default function IDE(){
     const [code,setCode] = useState('');
@@ -25,7 +27,7 @@ export default function IDE(){
             input: input
         }
         try {
-            const {data} = await axios.post("https://online-judge-rose.vercel.app/run", payload)
+            const {data} = await axios.post(BACKEND_URL+"run", payload)
             setOutput("Output: \n"+data.output)
             console.log(data)
         } catch (error) {
