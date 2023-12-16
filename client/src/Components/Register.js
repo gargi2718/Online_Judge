@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { BACKEND_URL} from "../../Url.js"
+
 export default function Register() {
   const [mail, setMail] = useState("");
   const [pass, setPass] = useState("");
@@ -11,8 +13,7 @@ export default function Register() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      axios
-        .post("https://online-judge-rose.vercel.app/register", { mail, pass, name, handle })
+      axios.post(BACKEND_URL+"register", { mail, pass, name, handle })
         .then((res) => {
           if (res.data === "exists") {
             alert("User already exists");
