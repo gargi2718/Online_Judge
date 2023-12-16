@@ -3,7 +3,7 @@ import Nav from './Nav'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import stubs from "./stubs";
-import { BACKEND_URL} from "../../Url.js"
+import { BACKEND_URL} from "./Url.js"
 
 import Editor from '@monaco-editor/react';
 export default function IDE(){
