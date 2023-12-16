@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { BACKEND_URL} from "../../Url.js"
 import stubs from "./stubs";
 
 export default function SubEditor({ id, name , codecontent, lang}) {
@@ -36,7 +37,7 @@ export default function SubEditor({ id, name , codecontent, lang}) {
       input: input,
     };
     try {
-      const { data } = await axios.post("https://online-judge-rose.vercel.app/run", payload);
+      const { data } = await axios.post(BACKEND_URL+"run", payload);
       setOutput("Output: \n" + data.output);
     } catch (error) {
       const msg = error.response.data.err.stderr;
@@ -65,7 +66,7 @@ export default function SubEditor({ id, name , codecontent, lang}) {
     };
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/submit",
+        BACKEND_URL+"submit",
         payload
       );
       const { accepted, totalcases } = data;
