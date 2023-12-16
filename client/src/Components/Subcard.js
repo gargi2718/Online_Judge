@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { BACKEND_URL} from "../../Url.js"
+import { BACKEND_URL} from "./Url.js"
 
 export default function Subcard({id,name,code,verdict,lang,time}){
     const Nav = useNavigate();
