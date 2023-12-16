@@ -1,10 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { BACKEND_URL} from "../../Url.js"
+
 export default function Subcard({id,name,code,verdict,lang,time}){
     const Nav = useNavigate();
     const handleClick = async ()=>{
-        const desc = await axios.post("https://online-judge-rose.vercel.app/getstatement",{id})
+        const desc = await axios.post(BACKEND_URL+"getstatement",{id})
         const description=desc.data;
         sessionStorage.setItem('fromsub',true);
         Nav(`/problem/${id}`,{state: {name,description,code,lang}})
