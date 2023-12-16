@@ -36,7 +36,7 @@ export default function SubEditor({ id, name , codecontent, lang}) {
       input: input,
     };
     try {
-      const { data } = await axios.post("http://localhost:8000/run", payload);
+      const { data } = await axios.post("https://online-judge-rose.vercel.app/run", payload);
       setOutput("Output: \n" + data.output);
     } catch (error) {
       const msg = error.response.data.err.stderr;
