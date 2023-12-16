@@ -12,7 +12,7 @@ export default function Submissions() {
     const getdata = async () => {
       try {
         await axios
-          .post("http://localhost:8000/getsubmissions", { mail })
+          .post("https://online-judge-rose.vercel.app/getsubmissions", { mail })
           .then((res) => setData(res.data));
       } catch (error) {
         console.log(error, "something went wrong");
