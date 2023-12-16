@@ -55,7 +55,7 @@ export default function Editor({ id, name }) {
     };
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/submit",
+        "https://online-judge-kr22.vercel.app/submit",
         payload
       );
       const { accepted, totalcases } = data;
