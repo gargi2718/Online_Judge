@@ -10,7 +10,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      axios.post("http://localhost:8000/login", { mail, pass }).then((res) => {
+      axios.post("https://online-judge-rose.vercel.app/login", { mail, pass }).then((res) => {
         if (res.data.status === "failed") {
           alert("Please enter valid email or password");
         } else if (res.data.status === "success") {
