@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from './Nav';
 import Probcard from './Probcard';
 import axios from 'axios';
-import { BACKEND_URL} from "../../Url.js"
+import { BACKEND_URL} from "./Url.js"
 import { useState, useEffect} from 'react';
 
 export default function Problemset(){
