@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { BACKEND_URL} from "../../Url.js"
 
 export default function Login() {
   const [mail, setMail] = useState("");
@@ -10,7 +11,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      axios.post("https://online-judge-rose.vercel.app/login", { mail, pass }).then((res) => {
+      axios.post(BACKEND_URL+"/login", { mail, pass }).then((res) => {
         if (res.data.status === "failed") {
           alert("Please enter valid email or password");
         } else if (res.data.status === "success") {
