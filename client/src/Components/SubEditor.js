@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { BACKEND_URL} from "../../Url.js"
+import { BACKEND_URL} from "./Url.js"
 import stubs from "./stubs";
 
 export default function SubEditor({ id, name , codecontent, lang}) {
