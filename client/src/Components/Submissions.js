@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "./Nav";
 import Subcard from "./Subcard";
-import { BACKEND_URL} from "../../Url.js"
+import { BACKEND_URL} from "./Url.js"
 import { useState, useEffect } from "react";
 import axios from "axios";
 
