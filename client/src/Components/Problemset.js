@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from './Nav';
 import Probcard from './Probcard';
 import axios from 'axios';
+import { BACKEND_URL} from "../../Url.js"
 import { useState, useEffect} from 'react';
 
 export default function Problemset(){
@@ -11,7 +12,7 @@ export default function Problemset(){
     useEffect(() => {
         const getdata= async () =>{
             try {
-                await axios.get("https://online-judge-rose.vercel.app/getAllproblems").then(res=>setData(res.data))
+                await axios.get(BACKEND_URL+"/getAllproblems").then(res=>setData(res.data))
             } catch (error) {
                 console.log(error,"something went wrong")
             }
