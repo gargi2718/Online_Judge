@@ -4,7 +4,7 @@ import axios from "axios";
 export default function Subcard({id,name,code,verdict,lang,time}){
     const Nav = useNavigate();
     const handleClick = async ()=>{
-        const desc = await axios.post("http://localhost:8000/getstatement",{id})
+        const desc = await axios.post("https://online-judge-rose.vercel.app/getstatement",{id})
         const description=desc.data;
         sessionStorage.setItem('fromsub',true);
         Nav(`/problem/${id}`,{state: {name,description,code,lang}})
