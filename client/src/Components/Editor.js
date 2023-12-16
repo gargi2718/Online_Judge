@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import stubs from "./stubs";
+import { BACKEND_URL} from "../../Url.js"
 export default function Editor({ id, name }) {
   const initial = stubs.cpp;
  
@@ -26,7 +27,7 @@ export default function Editor({ id, name }) {
       input: input,
     };
     try {
-      const { data } = await axios.post("https://online-judge-rose.vercel.app/run", payload);
+      const { data } = await axios.post(BACKEND_URL+"run", payload);
       setOutput("Output: \n" + data.output);
     } catch (error) {
       const msg = error.response.data.err.stderr;
@@ -55,7 +56,7 @@ export default function Editor({ id, name }) {
     };
     try {
       const { data } = await axios.post(
-        "https://online-judge-rose.vercel.app/submit",
+        BACKEND_URL+"submit",
         payload
       );
       const { accepted, totalcases } = data;
