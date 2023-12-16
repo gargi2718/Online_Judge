@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "./Nav";
 import Subcard from "./Subcard";
+import { BACKEND_URL} from "../../Url.js"
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -12,7 +13,7 @@ export default function Submissions() {
     const getdata = async () => {
       try {
         await axios
-          .post("https://online-judge-rose.vercel.app/getsubmissions", { mail })
+          .post(BACKEND_URL+"getsubmissions", { mail })
           .then((res) => setData(res.data));
       } catch (error) {
         console.log(error, "something went wrong");
