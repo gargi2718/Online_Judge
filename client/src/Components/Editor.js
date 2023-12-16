@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import stubs from "./stubs";
-import { BACKEND_URL} from "../../Url.js"
+import { BACKEND_URL} from "./Url.js"
 export default function Editor({ id, name }) {
   const initial = stubs.cpp;
  
